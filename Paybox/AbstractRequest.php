@@ -175,6 +175,8 @@ abstract class AbstractRequest implements RequestInterface
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HEADER,         false);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         $output = curl_exec($curl);
         curl_close($curl);
 
